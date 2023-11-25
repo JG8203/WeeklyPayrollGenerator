@@ -1,0 +1,104 @@
+<div class="overflow-x-auto bg-white rounded-lg shadow-lg mt-6">
+  <h1 class="text-xl font-semibold text-gray-800 text-center py-4">Payroll Report</h1>
+  <hr class="mb-4" />
+
+  <table class="min-w-full leading-normal">
+    <thead>
+    <tr>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Day
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        In Time
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Out Time
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Rest Day
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Day Type
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Daily Salary
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Total Hours
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Night Shift Hours
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Overtime Hours
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Actions
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% weekly_totals = {hours: 0, night_hours: 0, overtime: 0, salary: 0} %>
+    <% @payroll_report.each do |day_info| %>
+      <% # Calculate totals for each column %>
+      <% weekly_totals[:hours] += day_info[:total_hours] %>
+      <% weekly_totals[:night_hours] += day_info[:regular_night_shift_hours] %>
+      <% weekly_totals[:overtime] += day_info[:overtime_hours] %>
+      <% weekly_totals[:salary] += day_info[:daily_salary] %>
+      <tr>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:day_number] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:in_time] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:out_time] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:is_rest] ? 'Yes' : 'No' %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:day_type] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= number_to_currency(day_info[:daily_salary], unit: "₱") %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:total_hours] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:regular_night_shift_hours] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:overtime_hours] %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= link_to 'Edit', edit_employee_day_path(@employee, day_info[:id]), class: "text-indigo-600 hover:text-indigo-900" %>
+        </td>
+      </tr>
+    <% end %>
+    <!-- Add a final row for totals -->
+    <tr class="bg-gray-100">
+      <td class="px-5 py-5 border-b border-gray-200 text-sm font-semibold" colspan="5">Weekly Totals</td>
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+        <%= number_to_currency(weekly_totals[:salary], unit: "₱") %>
+      </td>
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+        <%= weekly_totals[:hours] %> hrs
+      </td>
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+        <%= weekly_totals[:night_hours] %> hrs
+      </td>
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+        <%= weekly_totals[:overtime] %> hrs
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="px-5 py-4 bg-gray-100 text-right">
+    <strong>Total Weekly Salary: <%= number_to_currency(@total_salary, unit: "₱") %></strong>
+
+  </div>
+</div>

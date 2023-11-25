@@ -1,0 +1,41 @@
+<!-- Assuming you have a stylesheet linked for styles -->
+<div class="overflow-x-auto bg-white rounded-lg shadow">
+  <table class="min-w-full leading-normal">
+    <thead>
+    <tr>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-blue-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+        ID
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-blue-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+        Name
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-blue-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+        Daily Salary
+      </th>
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-blue-800 text-left text-xs font-semibold text-white uppercase tracking-wider">
+        Actions
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= employee.id %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= link_to employee.name, generate_payroll_employee_path(employee), class: "text-blue-600 hover:text-blue-800" %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= number_to_currency(employee.daily_salary, unit: "$", precision: 2) %>
+        </td>
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= link_to 'Edit', edit_employee_path(employee), class: "text-indigo-600 hover:text-indigo-900" %> |
+          <%= link_to 'Destroy', employee_path(employee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-900" %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Create New Employee', new_employee_path, class: 'inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+</div>
