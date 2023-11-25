@@ -1,5 +1,9 @@
 <div class="overflow-x-auto bg-white rounded-lg shadow-lg mt-6">
-  <h1 class="text-xl font-semibold text-gray-800 text-center py-4">Payroll Report</h1>
+  <div class="overflow-x-auto bg-white rounded-lg shadow-lg mt-6">
+    <%= link_to 'Back to Home', root_path, class: 'btn btn-primary' %>
+    <h1 class="text-xl font-semibold text-gray-800 text-center py-4">Payroll Report</h1>
+    <!-- Rest of your code -->
+  </div>
   <hr class="mb-4" />
 
   <table class="min-w-full leading-normal">
@@ -32,18 +36,23 @@
       <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
         Overtime Hours
       </th>
+      <!-- New Column Header for Overtime Night Shift Hours -->
+      <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+        Overtime Night Shift Hours
+      </th>
       <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
         Actions
       </th>
     </tr>
     </thead>
     <tbody>
-    <% weekly_totals = {hours: 0, night_hours: 0, overtime: 0, salary: 0} %>
+    <% weekly_totals = {hours: 0, night_hours: 0, overtime: 0, overtime_night: 0, salary: 0} %>
     <% @payroll_report.each do |day_info| %>
       <% # Calculate totals for each column %>
       <% weekly_totals[:hours] += day_info[:total_hours] %>
       <% weekly_totals[:night_hours] += day_info[:regular_night_shift_hours] %>
       <% weekly_totals[:overtime] += day_info[:overtime_hours] %>
+      <% weekly_totals[:overtime_night] += day_info[:overtime_night_shift_hours] %> <!-- New line for Overtime Night Shift Hours Total -->
       <% weekly_totals[:salary] += day_info[:daily_salary] %>
       <tr>
         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -73,6 +82,10 @@
         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <%= day_info[:overtime_hours] %>
         </td>
+        <!-- New Data Cell for Overtime Night Shift Hours -->
+        <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+          <%= day_info[:overtime_night_shift_hours] %>
+        </td>
         <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
           <%= link_to 'Edit', edit_employee_day_path(@employee, day_info[:id]), class: "text-indigo-600 hover:text-indigo-900" %>
         </td>
@@ -93,12 +106,13 @@
       <td class="px-5 py-5 border-b border-gray-200 text-sm">
         <%= weekly_totals[:overtime] %> hrs
       </td>
+      <!-- New Total Cell for Overtime Night Shift Hours -->
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+        <%= weekly_totals[:overtime_night] %> hrs
+      </td>
+      <td class="px-5 py-5 border-b border-gray-200 text-sm">
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <div class="px-5 py-4 bg-gray-100 text-right">
-    <strong>Total Weekly Salary: <%= number_to_currency(@total_salary, unit: "₱") %></strong>
-
-  </div>
 </div>

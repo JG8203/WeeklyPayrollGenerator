@@ -48,6 +48,7 @@ class Employee < ApplicationRecord
       total_hours: total_hours,
       regular_night_shift_hours: regular_night_shift_hours,
       overtime_hours: overtime_hours,
+      overtime_night_shift_hours: overtime_night_shift_hours,
       is_rest: day.is_rest,
       day_type: day.day_type,
       daily_salary: compute_daily_salary(day)
