@@ -40,14 +40,12 @@ class Employee < ApplicationRecord
     total_hours = ((DateTime.strptime(day.out_time, '%H%M') - DateTime.strptime(day.in_time, '%H%M')) * 24).to_i
     total_hours += 24 if day.out_time < day.in_time # If working past midnight
 
-    total_hours_adjusted = total_hours >= 8 ? total_hours - 1 : total_hours
-
     {
       day_number: index + 1,
-      id: day.id,
+      id:day.id,
       in_time: day.in_time,
       out_time: day.out_time,
-      total_hours: total_hours_adjusted,
+      total_hours: total_hours,
       regular_night_shift_hours: regular_night_shift_hours,
       overtime_hours: overtime_hours,
       overtime_night_shift_hours: overtime_night_shift_hours,
