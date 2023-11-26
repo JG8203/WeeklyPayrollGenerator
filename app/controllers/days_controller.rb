@@ -13,11 +13,7 @@ class DaysController < ApplicationController
     @employee = Employee.find(params[:employee_id])
     @day = @employee.days.find(params[:id])
 
-    converted_params = day_params
-    converted_params[:in_time] = convert_to_string(converted_params[:in_time])
-    converted_params[:out_time] = convert_to_string(converted_params[:out_time])
-
-    if @day.update(converted_params)
+    if @day.update(converted_day_params)
       redirect_to employee_path(@employee)
     else
       render 'edit'
@@ -30,8 +26,15 @@ class DaysController < ApplicationController
     params.require(:day).permit(:in_time, :out_time, :is_rest, :day_type)
   end
 
+  def converted_day_params
+    converted_params = day_params
+    converted_params[:in_time] = convert_to_string(converted_params[:in_time])
+    converted_params[:out_time] = convert_to_string(converted_params[:out_time])
+    converted_params
+  end
+
   def convert_to_string(datetime_str)
-    # Assuming the datetime_str is in the format 'YYYY-MM-DDTHH:MM'
+    # Convert 'HH:MM' format to 'HHMM'
     DateTime.parse(datetime_str).strftime('%H%M') rescue datetime_str
   end
 end
