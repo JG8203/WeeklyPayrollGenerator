@@ -1,0 +1,460 @@
+  [1m[35m (329.6ms)[0m  [1m[35mCREATE DATABASE "mysite_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE DATABASE "mysite_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:30:51 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 88.3ms | Allocations: 5784)
+  Rendered layout layouts/application.html.erb (Duration: 88.3ms | Allocations: 5878)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 19.8ms | Allocations: 21259)
+  [1m[35m (131.1ms)[0m  [1m[35mCREATE DATABASE "employees" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:13 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 54.6ms | Allocations: 5784)
+  Rendered layout layouts/application.html.erb (Duration: 54.7ms | Allocations: 5878)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 31.5ms | Allocations: 21259)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:15 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 255)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 314)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.9ms | Allocations: 516)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:16 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 312)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms | Allocations: 513)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:16 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 312)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.8ms | Allocations: 513)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:17 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 5784)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 5878)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.2ms | Allocations: 21259)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:18 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 255)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 314)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.8ms | Allocations: 516)
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6425555839124862720)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (13.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2023-11-26 16:31:42.396017', '2023-11-26 16:31:42.396020') RETURNING "key"[0m
+Migrating to CreateEmployees (20231124174627)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "employees" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231124174627') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDays (20231124174638)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "days" ("id" bigserial primary key, "in_time" character varying, "out_time" character varying, "is_rest" boolean, "day_type" character varying, "employee_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_bde8eb81ed"
+FOREIGN KEY ("employee_id")
+  REFERENCES "employees" ("id")
+)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_days_on_employee_id" ON "days" ("employee_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231124174638') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDailySalaryToEmployees (20231124185254)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "employees" ADD "daily_salary" decimal[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231124185254') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6425555839124862720)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:31:48 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 6099)
+  Rendered layout layouts/application.html.erb (Duration: 917.9ms | Allocations: 164724)
+Completed 200 OK in 936ms (Views: 910.6ms | ActiveRecord: 9.0ms | Allocations: 180147)
+Started GET "/assets/tailwind-98bde99fdb9d2e8de6cc20be9aa384ae5ae74178031e40df90d12bcdf145ac50.css" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/inter-font-8c3e82affb176f4bca9616b838d906343d1251adc8408efe02cf2b1e4fcf2bc4.css" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/application-fe440406e54bdd95ec9046fd7f7b3f6803f9748857226012c8213a74c8350ae1.css" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/es-module-shims.min-4ca9b3dd5e434131e3bb4b0c1d7dff3bfd4035672a5086deec6f73979a49be73.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/turbo.min-dfd93b3092d1d0ff56557294538d069bdbb28977d3987cb39bc0dd892f32fc57.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/application-37f365cbecf1fa2810a8303f4b6571676fa1f9c56c248528bc14ddb857531b95.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/Inter-roman.latin.var-4b87a3d384ea557b10afa9570b753eda868b12b5e51eea0977ffa6e641998f6a.woff2" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/controllers/index-2db729dddcc5b979110e98de4b6720f83f91a123172e87281d5a58410fc43806.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/controllers/application-368d98631bccbf2349e0d4f8269afb3fe9625118341966de054759d96ea86c7e.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/assets/controllers/hello_controller-549135e8e7c683a538c3d6d517339ba470fcfb79d62f738a0a089ba41851a554.js" for 127.0.0.1 at 2023-11-27 00:31:49 +0800
+Started GET "/employees/new" for 127.0.0.1 at 2023-11-27 00:31:53 +0800
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 4.6ms | Allocations: 1651)
+  Rendered employees/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1902)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4701)
+Completed 200 OK in 35ms (Views: 12.9ms | ActiveRecord: 7.4ms | Allocations: 13173)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:31:57 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (2.3ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:31:57.770010"], ["updated_at", "2023-11-26 16:31:57.770010"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (2.6ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.799846"], ["updated_at", "2023-11-26 16:31:57.799846"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.803052"], ["updated_at", "2023-11-26 16:31:57.803052"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.804131"], ["updated_at", "2023-11-26 16:31:57.804131"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.805253"], ["updated_at", "2023-11-26 16:31:57.805253"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.806344"], ["updated_at", "2023-11-26 16:31:57.806344"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.807401"], ["updated_at", "2023-11-26 16:31:57.807401"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 1], ["created_at", "2023-11-26 16:31:57.808461"], ["updated_at", "2023-11-26 16:31:57.808461"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/1
+Completed 302 Found in 94ms (ActiveRecord: 46.7ms | Allocations: 24923)
+Started GET "/employees/1" for 127.0.0.1 at 2023-11-27 00:31:57 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/employees/1/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 639)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:31:57 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (0.7ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms | Allocations: 1561)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:31:59 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (1.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:31:59.049178"], ["updated_at", "2023-11-26 16:31:59.049178"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.7ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.054041"], ["updated_at", "2023-11-26 16:31:59.054041"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.056668"], ["updated_at", "2023-11-26 16:31:59.056668"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.058795"], ["updated_at", "2023-11-26 16:31:59.058795"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.060853"], ["updated_at", "2023-11-26 16:31:59.060853"]]
+  [1m[36mDay Create (0.6ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.062953"], ["updated_at", "2023-11-26 16:31:59.062953"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.064826"], ["updated_at", "2023-11-26 16:31:59.064826"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 2], ["created_at", "2023-11-26 16:31:59.065761"], ["updated_at", "2023-11-26 16:31:59.065761"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/2
+Completed 302 Found in 43ms (ActiveRecord: 5.9ms | Allocations: 6223)
+Started GET "/employees/2" for 127.0.0.1 at 2023-11-27 00:31:59 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+Redirected to http://0.0.0.0:3000/employees/2/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/2/generate_payroll" for 127.0.0.1 at 2023-11-27 00:31:59 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 2]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 722)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:01 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (1.4ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:01.731651"], ["updated_at", "2023-11-26 16:32:01.731651"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.735551"], ["updated_at", "2023-11-26 16:32:01.735551"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.736626"], ["updated_at", "2023-11-26 16:32:01.736626"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.737211"], ["updated_at", "2023-11-26 16:32:01.737211"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.737792"], ["updated_at", "2023-11-26 16:32:01.737792"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.738225"], ["updated_at", "2023-11-26 16:32:01.738225"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.738648"], ["updated_at", "2023-11-26 16:32:01.738648"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 3], ["created_at", "2023-11-26 16:32:01.739163"], ["updated_at", "2023-11-26 16:32:01.739163"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/3
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms | Allocations: 3644)
+Started GET "/employees/3" for 127.0.0.1 at 2023-11-27 00:32:01 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+Redirected to http://0.0.0.0:3000/employees/3/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/3/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:01 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 3]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 721)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:02.040975"], ["updated_at", "2023-11-26 16:32:02.040975"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.043018"], ["updated_at", "2023-11-26 16:32:02.043018"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.044286"], ["updated_at", "2023-11-26 16:32:02.044286"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.045374"], ["updated_at", "2023-11-26 16:32:02.045374"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.046632"], ["updated_at", "2023-11-26 16:32:02.046632"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.048047"], ["updated_at", "2023-11-26 16:32:02.048047"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.049294"], ["updated_at", "2023-11-26 16:32:02.049294"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 4], ["created_at", "2023-11-26 16:32:02.050378"], ["updated_at", "2023-11-26 16:32:02.050378"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/4
+Completed 302 Found in 12ms (ActiveRecord: 3.3ms | Allocations: 3656)
+Started GET "/employees/4" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+Redirected to http://0.0.0.0:3000/employees/4/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/4/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 4]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 721)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:02.311752"], ["updated_at", "2023-11-26 16:32:02.311752"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.6ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.313697"], ["updated_at", "2023-11-26 16:32:02.313697"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.315908"], ["updated_at", "2023-11-26 16:32:02.315908"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.318180"], ["updated_at", "2023-11-26 16:32:02.318180"]]
+  [1m[36mDay Create (0.7ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.320358"], ["updated_at", "2023-11-26 16:32:02.320358"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.322496"], ["updated_at", "2023-11-26 16:32:02.322496"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.323689"], ["updated_at", "2023-11-26 16:32:02.323689"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 5], ["created_at", "2023-11-26 16:32:02.324920"], ["updated_at", "2023-11-26 16:32:02.324920"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/5
+Completed 302 Found in 17ms (ActiveRecord: 4.9ms | Allocations: 3644)
+Started GET "/employees/5" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+Redirected to http://0.0.0.0:3000/employees/5/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/5/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 5]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 721)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (12.2ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:02.598337"], ["updated_at", "2023-11-26 16:32:02.598337"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.612712"], ["updated_at", "2023-11-26 16:32:02.612712"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.614485"], ["updated_at", "2023-11-26 16:32:02.614485"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.616314"], ["updated_at", "2023-11-26 16:32:02.616314"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.618490"], ["updated_at", "2023-11-26 16:32:02.618490"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.619919"], ["updated_at", "2023-11-26 16:32:02.619919"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.621247"], ["updated_at", "2023-11-26 16:32:02.621247"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 6], ["created_at", "2023-11-26 16:32:02.622360"], ["updated_at", "2023-11-26 16:32:02.622360"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/6
+Completed 302 Found in 28ms (ActiveRecord: 16.4ms | Allocations: 3633)
+Started GET "/employees/6" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+Redirected to http://0.0.0.0:3000/employees/6/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/6/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 6]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 719)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:02.895524"], ["updated_at", "2023-11-26 16:32:02.895524"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.897468"], ["updated_at", "2023-11-26 16:32:02.897468"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.898835"], ["updated_at", "2023-11-26 16:32:02.898835"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.899889"], ["updated_at", "2023-11-26 16:32:02.899889"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.900902"], ["updated_at", "2023-11-26 16:32:02.900902"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.901791"], ["updated_at", "2023-11-26 16:32:02.901791"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.903237"], ["updated_at", "2023-11-26 16:32:02.903237"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 7], ["created_at", "2023-11-26 16:32:02.905205"], ["updated_at", "2023-11-26 16:32:02.905205"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/7
+Completed 302 Found in 14ms (ActiveRecord: 3.6ms | Allocations: 3639)
+Started GET "/employees/7" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+Redirected to http://0.0.0.0:3000/employees/7/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/7/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:02 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 7]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 719)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:03.146056"], ["updated_at", "2023-11-26 16:32:03.146056"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.148131"], ["updated_at", "2023-11-26 16:32:03.148131"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.149922"], ["updated_at", "2023-11-26 16:32:03.149922"]]
+  [1m[36mDay Create (0.6ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.151813"], ["updated_at", "2023-11-26 16:32:03.151813"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.154133"], ["updated_at", "2023-11-26 16:32:03.154133"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.155214"], ["updated_at", "2023-11-26 16:32:03.155214"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.156073"], ["updated_at", "2023-11-26 16:32:03.156073"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 8], ["created_at", "2023-11-26 16:32:03.157581"], ["updated_at", "2023-11-26 16:32:03.157581"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/8
+Completed 302 Found in 16ms (ActiveRecord: 4.3ms | Allocations: 3645)
+Started GET "/employees/8" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+Redirected to http://0.0.0.0:3000/employees/8/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/8/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 8]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 719)
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (0.6ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-26 16:32:03.363170"], ["updated_at", "2023-11-26 16:32:03.363170"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.365137"], ["updated_at", "2023-11-26 16:32:03.365137"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.366095"], ["updated_at", "2023-11-26 16:32:03.366095"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.366959"], ["updated_at", "2023-11-26 16:32:03.366959"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.367868"], ["updated_at", "2023-11-26 16:32:03.367868"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.368792"], ["updated_at", "2023-11-26 16:32:03.368792"]]
+  [1m[36mDay Create (0.4ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.370121"], ["updated_at", "2023-11-26 16:32:03.370121"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 9], ["created_at", "2023-11-26 16:32:03.371388"], ["updated_at", "2023-11-26 16:32:03.371388"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/9
+Completed 302 Found in 11ms (ActiveRecord: 3.2ms | Allocations: 3642)
+Started GET "/employees/9" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+Redirected to http://0.0.0.0:3000/employees/9/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/9/generate_payroll" for 127.0.0.1 at 2023-11-27 00:32:03 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mDay Load (0.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 9]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 719)
+Started GET "/employees/new" for 127.0.0.1 at 2023-11-27 00:33:21 +0800
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 2.3ms | Allocations: 1793)
+  Rendered employees/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2152)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 56452)
+Completed 200 OK in 157ms (Views: 35.3ms | ActiveRecord: 35.5ms | Allocations: 83545)
+Started GET "/employees/new" for 127.0.0.1 at 2023-11-27 00:33:21 +0800
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 1.4ms | Allocations: 1793)
+  Rendered employees/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2152)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 55553)
+Completed 200 OK in 69ms (Views: 25.1ms | ActiveRecord: 16.7ms | Allocations: 82632)
+Started GET "/assets/es-module-shims.min-4ca9b3dd5e434131e3bb4b0c1d7dff3bfd4035672a5086deec6f73979a49be73.js" for 127.0.0.1 at 2023-11-27 00:33:28 +0800
+Started GET "/assets/es-module-shims.js-c69f1a5dd068dfc08a4cedc0ad77b792985bf256e162852bd03cdf764b666c4a.map" for 127.0.0.1 at 2023-11-27 00:33:28 +0800
+Started GET "/assets/stimulus.min.js-2cc63625fa177963b45da974806e7aee846cbf1d4930815733d0fdf3fb232325.map" for 127.0.0.1 at 2023-11-27 00:33:28 +0800
+Started GET "/assets/turbo.min.js-24086855a1740f1ed123d14c033071ab88963d4eb7c9875ea45441d48d8a79d2.map" for 127.0.0.1 at 2023-11-27 00:33:28 +0800
+Started POST "/employees" for 127.0.0.1 at 2023-11-27 00:33:30 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (1.5ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua"], ["created_at", "2023-11-26 16:33:30.137091"], ["updated_at", "2023-11-26 16:33:30.137091"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (1.0ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.160383"], ["updated_at", "2023-11-26 16:33:30.160383"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.162346"], ["updated_at", "2023-11-26 16:33:30.162346"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.163108"], ["updated_at", "2023-11-26 16:33:30.163108"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.163733"], ["updated_at", "2023-11-26 16:33:30.163733"]]
+  [1m[36mDay Create (0.3ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.164353"], ["updated_at", "2023-11-26 16:33:30.164353"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.165035"], ["updated_at", "2023-11-26 16:33:30.165035"]]
+  [1m[36mDay Create (0.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 10], ["created_at", "2023-11-26 16:33:30.165629"], ["updated_at", "2023-11-26 16:33:30.165629"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/10
+Completed 302 Found in 99ms (ActiveRecord: 21.4ms | Allocations: 42854)
+Started GET "/employees/10" for 127.0.0.1 at 2023-11-27 00:33:30 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"10"}
+Redirected to http://0.0.0.0:3000/employees/10/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 639)
+Started GET "/employees/10/generate_payroll" for 127.0.0.1 at 2023-11-27 00:33:30 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"10"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 10]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms | Allocations: 1758)
+Started GET "/" for 127.0.0.1 at 2023-11-27 00:38:16 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (2.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 166.1ms | Allocations: 16414)
+  Rendered layout layouts/application.html.erb (Duration: 199.5ms | Allocations: 70455)
+Completed 200 OK in 220ms (Views: 166.5ms | ActiveRecord: 35.9ms | Allocations: 89644)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:38:19 +0800
+Processing by EmployeesController#generate_payroll as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (1.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+Completed 500 Internal Server Error in 22034ms (ActiveRecord: 6.6ms | Allocations: 33782)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:38:42 +0800
+Processing by EmployeesController#generate_payroll as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (8.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (1.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+Completed 500 Internal Server Error in 7672ms (ActiveRecord: 9.3ms | Allocations: 5144)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:42:50 +0800
+Processing by EmployeesController#generate_payroll as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (0.8ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3046)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 57296)
+Completed 200 OK in 7122ms (Views: 61.5ms | ActiveRecord: 41.3ms | Allocations: 132379)
+Started GET "/assets/Inter-roman.latin-ext.var-46bc23ba7e33ea447579cd95b95f34665d7560377065b72f3a77df8bca4b0e5c.woff2" for 127.0.0.1 at 2023-11-27 00:42:58 +0800
+Started GET "/employees/1/days/1/edit" for 127.0.0.1 at 2023-11-27 00:43:02 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"1", "id"=>"1"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (1.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 1], ["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 16.2ms | Allocations: 2879)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 5689)
+Completed 200 OK in 36ms (Views: 21.7ms | ActiveRecord: 2.0ms | Allocations: 6721)
+Started PATCH "/employees/1/days/1" for 127.0.0.1 at 2023-11-27 00:43:31 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"17:00", "out_time"=>"16:00", "is_rest"=>"1", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"1", "id"=>"1"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (1.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (2.6ms)[0m  [1m[33mUPDATE "days" SET "in_time" = $1, "out_time" = $2, "is_rest" = $3, "updated_at" = $4 WHERE "days"."id" = $5[0m  [["in_time", "1700"], ["out_time", "1600"], ["is_rest", true], ["updated_at", "2023-11-26 16:43:31.963230"], ["id", 1]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/1
+Completed 302 Found in 127ms (ActiveRecord: 27.7ms | Allocations: 41767)
+Started GET "/employees/1" for 127.0.0.1 at 2023-11-27 00:43:31 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/employees/1/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 703)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:43:31 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (0.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2960)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | Allocations: 56903)
+Completed 200 OK in 3953ms (Views: 51.6ms | ActiveRecord: 0.3ms | Allocations: 101636)

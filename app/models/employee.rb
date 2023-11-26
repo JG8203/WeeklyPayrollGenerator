@@ -33,12 +33,27 @@ class Employee < ApplicationRecord
 
   # Helper methods for detailed_payroll_report
   def detailed_day_report(day, index)
-    hourly_rate = self.daily_salary / 8
-    overtime_hours, regular_night_shift_hours, overtime_night_shift_hours = calculate_hours(day.in_time, day.out_time)
+    # Convert 'HHMM' to 'HH:MM' for time parsing
+    formatted_in_time = format_time_str(day.in_time)
+    formatted_out_time = format_time_str(day.out_time)
+
+    # Parse the times
+    begin
+      in_time = Time.parse(formatted_in_time)
+      out_time = Time.parse(formatted_out_time)
+      # Adjust for crossing midnight
+      out_time += 1.day if out_time < in_time
+    rescue ArgumentError => e
+      Rails.logger.error "Time parsing error in detailed_day_report: #{e.message}"
+      # Handle the error appropriately, maybe by skipping this entry or setting default values
+      return {}
+    end
 
     # Calculate total hours worked
-    total_hours = ((DateTime.strptime(day.out_time, '%H%M') - DateTime.strptime(day.in_time, '%H%M')) * 24).to_i
-    total_hours += 24 if day.out_time < day.in_time # If working past midnight
+    total_hours = ((out_time - in_time) / 1.hour).to_i
+
+    hourly_rate = self.daily_salary / 8
+    overtime_hours, regular_night_shift_hours, overtime_night_shift_hours = calculate_hours(day.in_time, day.out_time)
 
     {
       day_number: index + 1,
@@ -60,8 +75,10 @@ class Employee < ApplicationRecord
   end
 
   def calculate_hours(in_time_str, out_time_str)
-    # Parse the string into DateTime objects
-    # Assuming the in_time and out_time are in 'HH:MM' format
+    # Convert 'HHMM' to 'HH:MM'
+    in_time_str = format_time_str(in_time_str)
+    out_time_str = format_time_str(out_time_str)
+
     in_dt = DateTime.parse(in_time_str)
     out_dt = DateTime.parse(out_time_str)
     # Ensure these are integers representing the hours
@@ -156,5 +173,10 @@ class Employee < ApplicationRecord
     else
       hourly_rate
     end
+  end
+
+  def format_time_str(time_str)
+    time_str.insert(2, ':') if time_str && time_str.length == 4
+    time_str
   end
 end

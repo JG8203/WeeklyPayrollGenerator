@@ -8,15 +8,16 @@ development:
   database: mysite_development
   username: armaine
   password: afXHXRhyjP9B5rJgL6b7tjtgvm6lEqlu
-  # Assuming 'host' is the host name only, not the full URL
   host: dpg-clh0qlb1hq4c73fb3q6g-a.singapore-postgres.render.com
 
 test:
   <<: *default
-  database: mysite_test
+  database: employees
   username: armaine
-  password: afXHXRhyjP9B5rJgL6b7tjtgvm6lEqlu
-  host: dpg-clh0qlb1hq4c73fb3q6g-a.singapore-postgres.render.com
+  password: JoshuaGilo820356741234
+  host: localhost
+  # Specify port if it's not the default PostgreSQL port (5432)
+  # port: your_port
 
 production:
   <<: *default
