@@ -59,9 +59,11 @@ class Employee < ApplicationRecord
     { day_type: "Normal Day", in_time: "0900", out_time: "0900", is_rest: index >= 5 }
   end
 
-  def calculate_hours(in_time, out_time)
-    in_dt = DateTime.strptime(in_time, '%H%M')
-    out_dt = DateTime.strptime(out_time, '%H%M')
+  def calculate_hours(in_time_str, out_time_str)
+    # Parse the string into DateTime objects
+    # Assuming the in_time and out_time are in 'HH:MM' format
+    in_dt = DateTime.parse(in_time_str)
+    out_dt = DateTime.parse(out_time_str)
     # Ensure these are integers representing the hours
     night_shift_start = 22
     night_shift_end = 6
