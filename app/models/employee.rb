@@ -45,7 +45,7 @@ class Employee < ApplicationRecord
       id:day.id,
       in_time: day.in_time,
       out_time: day.out_time,
-      total_hours: total_hours,
+      total_hours: total_hours - 1,
       regular_night_shift_hours: regular_night_shift_hours,
       overtime_hours: overtime_hours,
       overtime_night_shift_hours: overtime_night_shift_hours,
