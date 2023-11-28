@@ -458,3 +458,763 @@ Processing by EmployeesController#generate_payroll as TURBO_STREAM
   Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2960)
   Rendered layout layouts/application.html.erb (Duration: 46.2ms | Allocations: 56903)
 Completed 200 OK in 3953ms (Views: 51.6ms | ActiveRecord: 0.3ms | Allocations: 101636)
+Started GET "/employees/1/days/2/edit" for 127.0.0.1 at 2023-11-27 00:45:08 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"1", "id"=>"2"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (1.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 1], ["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 3044)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 57102)
+Completed 200 OK in 179ms (Views: 36.9ms | ActiveRecord: 24.3ms | Allocations: 100479)
+Started PATCH "/employees/1/days/2" for 127.0.0.1 at 2023-11-27 00:45:19 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"01:45", "out_time"=>"13:45", "is_rest"=>"1", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"1", "id"=>"2"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (11.6ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 1], ["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (1.4ms)[0m  [1m[33mUPDATE "days" SET "in_time" = $1, "out_time" = $2, "is_rest" = $3, "updated_at" = $4 WHERE "days"."id" = $5[0m  [["in_time", "0145"], ["out_time", "1345"], ["is_rest", true], ["updated_at", "2023-11-26 16:45:19.959217"], ["id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/1
+Completed 302 Found in 32ms (ActiveRecord: 14.8ms | Allocations: 1094)
+Started GET "/employees/1" for 127.0.0.1 at 2023-11-27 00:45:19 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+Redirected to http://0.0.0.0:3000/employees/1/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/1/generate_payroll" for 127.0.0.1 at 2023-11-27 00:45:20 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4029)
+Completed 200 OK in 4074ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 54744)
+Started GET "/employees/1/days/3/edit" for 127.0.0.1 at 2023-11-27 00:45:44 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"1", "id"=>"3"}
+  [1m[36mEmployee Load (0.9ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDay Load (0.7ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 1], ["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 28.2ms | Allocations: 3757)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 6554)
+Completed 200 OK in 54ms (Views: 37.6ms | ActiveRecord: 1.5ms | Allocations: 7444)
+Started GET "/" for 127.0.0.1 at 2023-11-28 12:08:13 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (5.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 312.6ms | Allocations: 17392)
+  Rendered layout layouts/application.html.erb (Duration: 369.5ms | Allocations: 71855)
+Completed 200 OK in 391ms (Views: 285.6ms | ActiveRecord: 87.0ms | Allocations: 87286)
+Started DELETE "/employees/2" for 127.0.0.1 at 2023-11-28 12:08:17 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (2.8ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 2]]
+  [1m[36mDay Destroy (1.9ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 8]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 9]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 10]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 11]]
+  [1m[36mDay Destroy (0.8ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 12]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 13]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 14]]
+  [1m[36mEmployee Destroy (15.6ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 79ms (ActiveRecord: 29.7ms | Allocations: 14069)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:18 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2025)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4835)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.7ms | Allocations: 5093)
+Started DELETE "/employees/1" for 127.0.0.1 at 2023-11-28 12:08:19 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 1]]
+  [1m[36mDay Destroy (0.8ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 3]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 4]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 5]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 6]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 7]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 1]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 2]]
+  [1m[36mEmployee Destroy (0.4ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 20ms (ActiveRecord: 4.9ms | Allocations: 2931)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:19 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1817)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4617)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 1.2ms | Allocations: 4833)
+Started DELETE "/employees/3" for 127.0.0.1 at 2023-11-28 12:08:21 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 3]]
+  [1m[36mDay Destroy (0.9ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 15]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 16]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 17]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 18]]
+  [1m[36mDay Destroy (0.5ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 19]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 20]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 21]]
+  [1m[36mEmployee Destroy (0.5ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 3]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 14ms (ActiveRecord: 5.1ms | Allocations: 1883)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:21 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1610)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4409)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 4624)
+Started DELETE "/employees/4" for 127.0.0.1 at 2023-11-28 12:08:22 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 4]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 22]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 23]]
+  [1m[36mDay Destroy (0.5ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 24]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 25]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 26]]
+  [1m[36mDay Destroy (0.6ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 27]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 28]]
+  [1m[36mEmployee Destroy (0.7ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 4]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 19ms (ActiveRecord: 6.7ms | Allocations: 1874)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:22 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1403)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 4202)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 1.1ms | Allocations: 4417)
+Started DELETE "/employees/5" for 127.0.0.1 at 2023-11-28 12:08:24 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 5]]
+  [1m[36mDay Destroy (0.5ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 29]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 30]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 31]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 32]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 33]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 34]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 35]]
+  [1m[36mEmployee Destroy (0.8ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 5]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 13ms (ActiveRecord: 4.0ms | Allocations: 1904)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:24 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1196)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3995)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 4210)
+Started DELETE "/employees/6" for 127.0.0.1 at 2023-11-28 12:08:26 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.6ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 6]]
+  [1m[36mDay Destroy (0.6ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 36]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 37]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 38]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 39]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 40]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 41]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 42]]
+  [1m[36mEmployee Destroy (0.7ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 13ms (ActiveRecord: 4.5ms | Allocations: 1867)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:26 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 989)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3788)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 4003)
+Started DELETE "/employees/7" for 127.0.0.1 at 2023-11-28 12:08:28 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 7]]
+  [1m[36mDay Destroy (0.6ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 43]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 44]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 45]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 46]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 47]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 48]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 49]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 7]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 10ms (ActiveRecord: 3.0ms | Allocations: 1891)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:28 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 782)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3581)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.7ms | Allocations: 3796)
+Started DELETE "/employees/8" for 127.0.0.1 at 2023-11-28 12:08:29 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 8]]
+  [1m[36mDay Destroy (0.6ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 50]]
+  [1m[36mDay Destroy (0.9ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 51]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 52]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 53]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 54]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 55]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 56]]
+  [1m[36mEmployee Destroy (0.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms | Allocations: 1873)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:29 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3374)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 3589)
+Started DELETE "/employees/9" for 127.0.0.1 at 2023-11-28 12:08:31 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"9"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 9]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 57]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 58]]
+  [1m[36mDay Destroy (0.1ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 59]]
+  [1m[36mDay Destroy (0.1ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 60]]
+  [1m[36mDay Destroy (0.1ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 61]]
+  [1m[36mDay Destroy (0.1ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 62]]
+  [1m[36mDay Destroy (0.1ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 63]]
+  [1m[36mEmployee Destroy (0.2ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms | Allocations: 1915)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:31 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 368)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 3167)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 3382)
+Started DELETE "/employees/10" for 127.0.0.1 at 2023-11-28 12:08:32 +0800
+Processing by EmployeesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"10"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 10]]
+  [1m[36mDay Destroy (0.5ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 64]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 65]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 66]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 67]]
+  [1m[36mDay Destroy (0.2ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 68]]
+  [1m[36mDay Destroy (0.4ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 69]]
+  [1m[36mDay Destroy (0.3ms)[0m  [1m[31mDELETE FROM "days" WHERE "days"."id" = $1[0m  [["id", 70]]
+  [1m[36mEmployee Destroy (0.5ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = $1[0m  [["id", 10]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees
+Completed 302 Found in 14ms (ActiveRecord: 4.5ms | Allocations: 1879)
+Started GET "/employees" for 127.0.0.1 at 2023-11-28 12:08:32 +0800
+Processing by EmployeesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 153)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2952)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 3167)
+Started GET "/employees/new" for 127.0.0.1 at 2023-11-28 12:08:33 +0800
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 7.2ms | Allocations: 1540)
+  Rendered employees/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1791)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4590)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4894)
+Started POST "/employees" for 127.0.0.1 at 2023-11-28 12:08:38 +0800
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500"}, "commit"=>"Submit"}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEmployee Create (4.0ms)[0m  [1m[32mINSERT INTO "employees" ("name", "created_at", "updated_at", "daily_salary") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Joshua Gilo"], ["created_at", "2023-11-28 04:08:38.026489"], ["updated_at", "2023-11-28 04:08:38.026489"], ["daily_salary", "500.0"]]
+  [1m[36mDay Create (2.2ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.034164"], ["updated_at", "2023-11-28 04:08:38.034164"]]
+  [1m[36mDay Create (0.6ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.038350"], ["updated_at", "2023-11-28 04:08:38.038350"]]
+  [1m[36mDay Create (0.7ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.040311"], ["updated_at", "2023-11-28 04:08:38.040311"]]
+  [1m[36mDay Create (3.1ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.043371"], ["updated_at", "2023-11-28 04:08:38.043371"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", false], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.048750"], ["updated_at", "2023-11-28 04:08:38.048750"]]
+  [1m[36mDay Create (0.7ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.050896"], ["updated_at", "2023-11-28 04:08:38.050896"]]
+  [1m[36mDay Create (0.5ms)[0m  [1m[32mINSERT INTO "days" ("in_time", "out_time", "is_rest", "day_type", "employee_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["in_time", "0900"], ["out_time", "0900"], ["is_rest", true], ["day_type", "Normal Day"], ["employee_id", 11], ["created_at", "2023-11-28 04:08:38.053071"], ["updated_at", "2023-11-28 04:08:38.053071"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 32ms (ActiveRecord: 13.8ms | Allocations: 4636)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:08:38 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 634)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:08:38 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1832)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4627)
+Completed 200 OK in 43ms (Views: 4.8ms | ActiveRecord: 0.9ms | Allocations: 6225)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:10:19 +0800
+Processing by EmployeesController#generate_payroll as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.4ms | Allocations: 3029)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 57442)
+Completed 200 OK in 173ms (Views: 42.0ms | ActiveRecord: 26.4ms | Allocations: 99904)
+Started GET "/employees/11/days/71/edit" for 127.0.0.1 at 2023-11-28 12:10:21 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 12.7ms | Allocations: 2677)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5477)
+Completed 200 OK in 34ms (Views: 16.3ms | ActiveRecord: 1.1ms | Allocations: 6509)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:10:44 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"12:00", "out_time"=>"21:00", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (2.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (2.1ms)[0m  [1m[33mUPDATE "days" SET "in_time" = $1, "out_time" = $2, "updated_at" = $3 WHERE "days"."id" = $4[0m  [["in_time", "1200"], ["out_time", "2100"], ["updated_at", "2023-11-28 04:10:44.304362"], ["id", 71]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 19ms (ActiveRecord: 5.5ms | Allocations: 1332)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:10:44 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:10:44 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4035)
+Completed 200 OK in 21ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 5971)
+Started GET "/employees/11/days/71/edit" for 127.0.0.1 at 2023-11-28 12:10:47 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2155)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4952)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.6ms | Allocations: 5828)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:11:07 +0800
+Processing by EmployeesController#generate_payroll as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3038)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 57309)
+Completed 200 OK in 153ms (Views: 37.8ms | ActiveRecord: 27.9ms | Allocations: 99898)
+Started GET "/employees/11/days/71/edit" for 127.0.0.1 at 2023-11-28 12:12:38 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.1ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 3004)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 57439)
+Completed 200 OK in 170ms (Views: 43.9ms | ActiveRecord: 33.1ms | Allocations: 98506)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:12:58 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"18:00", "is_rest"=>"1", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.6ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (2.2ms)[0m  [1m[33mUPDATE "days" SET "in_time" = $1, "out_time" = $2, "is_rest" = $3, "updated_at" = $4 WHERE "days"."id" = $5[0m  [["in_time", "0900"], ["out_time", "1800"], ["is_rest", true], ["updated_at", "2023-11-28 04:12:58.239594"], ["id", 71]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 21ms (ActiveRecord: 5.7ms | Allocations: 2025)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:12:58 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 700)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:12:58 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2737)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5541)
+Completed 200 OK in 33ms (Views: 9.6ms | ActiveRecord: 0.6ms | Allocations: 8030)
+Started GET "/employees/11/days/71/edit" for 127.0.0.1 at 2023-11-28 12:13:01 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3672)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.9ms | Allocations: 4384)
+Started GET "/" for 127.0.0.1 at 2023-11-28 12:13:16 +0800
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 705)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3504)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 3785)
+Started GET "/employees/11/edit" for 127.0.0.1 at 2023-11-28 12:13:17 +0800
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/_form.html.erb (Duration: 17.4ms | Allocations: 2072)
+  Rendered employees/edit.html.erb within layouts/application (Duration: 20.1ms | Allocations: 2377)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 5172)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.5ms | Allocations: 5586)
+Started PATCH "/employees/11" for 127.0.0.1 at 2023-11-28 12:13:18 +0800
+Processing by EmployeesController#update as TURBO_STREAM
+  Parameters: {"employee"=>{"name"=>"Joshua Gilo", "daily_salary"=>"500.0"}, "commit"=>"Submit", "id"=>"11"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 18ms (ActiveRecord: 0.4ms | Allocations: 2042)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:13:18 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:13:18 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 4011)
+Completed 200 OK in 30ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 5941)
+Started GET "/employees/11/days/71/edit" for 127.0.0.1 at 2023-11-28 12:13:33 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 875)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3670)
+Completed 200 OK in 23ms (Views: 11.3ms | ActiveRecord: 1.7ms | Allocations: 4368)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:35 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.6ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1939)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4734)
+Completed 200 OK in 18ms (Views: 7.5ms | ActiveRecord: 1.2ms | Allocations: 5694)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:36 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4572)
+Completed 200 OK in 10ms (Views: 5.5ms | ActiveRecord: 0.7ms | Allocations: 5489)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:37 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4572)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 5488)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:38 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.6ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4572)
+Completed 200 OK in 15ms (Views: 5.7ms | ActiveRecord: 1.2ms | Allocations: 5487)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:38 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (1.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (2.7ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4572)
+Completed 200 OK in 19ms (Views: 5.7ms | ActiveRecord: 3.6ms | Allocations: 5487)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:38 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"", "out_time"=>"", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4572)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 5487)
+Started PATCH "/employees/11/days/71" for 127.0.0.1 at 2023-11-28 12:13:44 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"18:00", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"71"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 71], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (1.3ms)[0m  [1m[33mUPDATE "days" SET "is_rest" = $1, "updated_at" = $2 WHERE "days"."id" = $3[0m  [["is_rest", false], ["updated_at", "2023-11-28 04:13:44.464738"], ["id", 71]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 10ms (ActiveRecord: 3.6ms | Allocations: 1065)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:13:44 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:13:44 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4021)
+Completed 200 OK in 51ms (Views: 15.6ms | ActiveRecord: 0.8ms | Allocations: 5948)
+Started GET "/employees/11/days/72/edit" for 127.0.0.1 at 2023-11-28 12:13:48 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"72"}
+  [1m[36mEmployee Load (0.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 72], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 7.1ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3685)
+Completed 200 OK in 26ms (Views: 16.8ms | ActiveRecord: 1.0ms | Allocations: 4383)
+Started PATCH "/employees/11/days/72" for 127.0.0.1 at 2023-11-28 12:14:12 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"21:00", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"72"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 72], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (3.2ms)[0m  [1m[33mUPDATE "days" SET "out_time" = $1, "updated_at" = $2 WHERE "days"."id" = $3[0m  [["out_time", "2100"], ["updated_at", "2023-11-28 04:14:12.470569"], ["id", 72]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms | Allocations: 1064)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:14:12 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:14:12 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 4011)
+Completed 200 OK in 25ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 6574)
+Started GET "/employees/11/days/73/edit" for 127.0.0.1 at 2023-11-28 12:14:16 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"73"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 73], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3669)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.7ms | Allocations: 4367)
+Started PATCH "/employees/11/days/73" for 127.0.0.1 at 2023-11-28 12:14:27 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"00:00", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"73"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 73], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (0.8ms)[0m  [1m[33mUPDATE "days" SET "out_time" = $1, "updated_at" = $2 WHERE "days"."id" = $3[0m  [["out_time", "0000"], ["updated_at", "2023-11-28 04:14:27.534586"], ["id", 73]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 11ms (ActiveRecord: 5.3ms | Allocations: 1064)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:14:27 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:14:27 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.7ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1203)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3998)
+Completed 200 OK in 44ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 7380)
+Started GET "/employees/11/days/74/edit" for 127.0.0.1 at 2023-11-28 12:14:31 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"74"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 74], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3670)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.6ms | Allocations: 4368)
+Started PATCH "/employees/11/days/74" for 127.0.0.1 at 2023-11-28 12:14:43 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"18:00", "out_time"=>"03:00", "is_rest"=>"0", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"74"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 74], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (1.1ms)[0m  [1m[33mUPDATE "days" SET "in_time" = $1, "out_time" = $2, "updated_at" = $3 WHERE "days"."id" = $4[0m  [["in_time", "1800"], ["out_time", "0300"], ["updated_at", "2023-11-28 04:14:43.718524"], ["id", 74]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 14ms (ActiveRecord: 2.7ms | Allocations: 1070)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:14:43 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:14:43 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.5ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3992)
+Completed 200 OK in 41ms (Views: 5.8ms | ActiveRecord: 0.9ms | Allocations: 7878)
+Started GET "/employees/11/days/75/edit" for 127.0.0.1 at 2023-11-28 12:14:50 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"75"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 75], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3669)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 4367)
+Started PATCH "/employees/11/days/75" for 127.0.0.1 at 2023-11-28 12:15:15 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"18:00", "is_rest"=>"1", "day_type"=>"Normal Day"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"75"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 75], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (2.4ms)[0m  [1m[33mUPDATE "days" SET "out_time" = $1, "is_rest" = $2, "updated_at" = $3 WHERE "days"."id" = $4[0m  [["out_time", "1800"], ["is_rest", true], ["updated_at", "2023-11-28 04:15:15.429175"], ["id", 75]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 118ms (ActiveRecord: 29.2ms | Allocations: 39561)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:15:15 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 703)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:15:15 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.2ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2926)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | Allocations: 57288)
+Completed 200 OK in 65ms (Views: 47.7ms | ActiveRecord: 0.4ms | Allocations: 65025)
+Started GET "/employees/11/days/76/edit" for 127.0.0.1 at 2023-11-28 12:15:19 +0800
+Processing by DaysController#edit as HTML
+  Parameters: {"employee_id"=>"11", "id"=>"76"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.4ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 76], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering days/edit.html.erb within layouts/application
+  Rendered days/edit.html.erb within layouts/application (Duration: 14.1ms | Allocations: 2659)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 5457)
+Completed 200 OK in 25ms (Views: 19.4ms | ActiveRecord: 0.9ms | Allocations: 6348)
+Started PATCH "/employees/11/days/76" for 127.0.0.1 at 2023-11-28 12:15:56 +0800
+Processing by DaysController#update as TURBO_STREAM
+  Parameters: {"day"=>{"in_time"=>"09:00", "out_time"=>"23:00", "is_rest"=>"1", "day_type"=>"SNWH"}, "commit"=>"Submit", "employee_id"=>"11", "id"=>"76"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (0.3ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1 AND "days"."id" = $2 LIMIT $3[0m  [["employee_id", 11], ["id", 76], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDay Update (2.1ms)[0m  [1m[33mUPDATE "days" SET "out_time" = $1, "day_type" = $2, "updated_at" = $3 WHERE "days"."id" = $4[0m  [["out_time", "2300"], ["day_type", "SNWH"], ["updated_at", "2023-11-28 04:15:56.855138"], ["id", 76]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/employees/11
+Completed 302 Found in 10ms (ActiveRecord: 3.7ms | Allocations: 1091)
+Started GET "/employees/11" for 127.0.0.1 at 2023-11-28 12:15:56 +0800
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+Redirected to http://0.0.0.0:3000/employees/11/generate_payroll
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/employees/11/generate_payroll" for 127.0.0.1 at 2023-11-28 12:15:56 +0800
+Processing by EmployeesController#generate_payroll as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mDay Load (1.0ms)[0m  [1m[34mSELECT "days".* FROM "days" WHERE "days"."employee_id" = $1[0m  [["employee_id", 11]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/generate_payroll.html.erb within layouts/application
+  Rendered employees/generate_payroll.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3992)
+Completed 200 OK in 48ms (Views: 4.2ms | ActiveRecord: 1.5ms | Allocations: 9125)

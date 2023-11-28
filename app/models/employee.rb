@@ -52,6 +52,9 @@ class Employee < ApplicationRecord
     # Calculate total hours worked
     total_hours = ((out_time - in_time) / 1.hour).to_i
 
+    # Subtract 1 from total_hours if it's greater than 1
+    total_hours -= 1 if total_hours > 1
+
     hourly_rate = self.daily_salary / 8
     overtime_hours, regular_night_shift_hours, overtime_night_shift_hours = calculate_hours(day.in_time, day.out_time)
 
